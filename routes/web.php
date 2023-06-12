@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SliderController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::match(['get', 'post'], '/register', function () {
-    return redirect('login');
-});
+// Route::match(['get', 'post'], '/register', function () {
+//     return redirect('login');
+// });
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

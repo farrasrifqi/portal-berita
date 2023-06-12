@@ -10,6 +10,6 @@ class Siswa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','phone', 'address'
+        'name', 'phone', 'address'
     ];
 }
